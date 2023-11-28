@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Description from "./Description";
+import Image from "./Image";
+import Name from "./Name";
+import Price from "./Price";
+import "./App.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import Zelda from "./zelda.jpg"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export default function App() {
+    var FirstName="Rami";
+    return( <div className="Application">
+       <Card style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title><Name/></Card.Title>
+        <Card.Subtitle className="mb-2 text-muted"><Price/></Card.Subtitle>
+        <Card.Text>
+        <Description/>
+        <Image/>
+        </Card.Text>
+        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link href="#">Another Link</Card.Link>
+      </Card.Body>
+    </Card>
+        {
+            FirstName ? <p>Hi {FirstName} <img src={Zelda}/> </p> :
+            <p>Hello There!</p>
+        }
+    </div>);
+};
